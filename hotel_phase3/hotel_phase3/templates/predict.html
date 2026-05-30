@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Prediction Page</h1>
+<form method="POST">
+   {% csrf_token %}
+   <label>Lead Time</label>
+   <input type="number" name="lead_time" required>
+   <br><br>
+   <label>Adults</label>
+   <input type="number" name="adults" required>
+   <br><br>
+   <label>Stays In Week Nights</label>
+   <input type="number" name="stays_in_week_nights" required>
+   <br><br>
+   <button type="submit">Predict</button>
+</form>
+{% if prediction %}
+<h2>{{ prediction }}</h2>
+{% endif %}
+{% endblock %}

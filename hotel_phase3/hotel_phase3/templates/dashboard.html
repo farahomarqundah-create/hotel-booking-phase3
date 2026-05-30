@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Hotel Booking Dashboard</h1>
+<p>Total Bookings: {{ total_bookings }}</p>
+<p>Cancelled Bookings: {{ canceled_bookings }}</p>
+<p>Cancellation Rate: {{ cancellation_rate }}%</p>
+<h2>Hotel Types</h2>
+<ul>
+{% for hotel, count in hotel_counts.items %}
+<li>{{ hotel }} : {{ count }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
